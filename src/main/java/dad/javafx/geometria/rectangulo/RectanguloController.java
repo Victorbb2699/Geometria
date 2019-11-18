@@ -1,6 +1,5 @@
 package dad.javafx.geometria.rectangulo;
 
-import javafx.beans.binding.Bindings;
 import javafx.util.converter.NumberStringConverter;
 
 public class RectanguloController {
@@ -10,11 +9,15 @@ public class RectanguloController {
 
 	public RectanguloController() {
 
-//		anchoText.textProperty().bindBidirectional(model.baseProperty(), new NumberStringConverter());
-//		altoText.textProperty().bindBidirectional(model.alturaProperty(), new NumberStringConverter());
-//		areaLabel.textProperty().bind(model.areaProperty().asString());
-//		rectanguloShape.widthProperty().bind(model.baseProperty());
-//		rectanguloShape.heightProperty().bind(model.alturaProperty());
+		view.getAnchoText().textProperty().bindBidirectional(model.baseProperty(), new NumberStringConverter());
+		view.getAltoText().textProperty().bindBidirectional(model.alturaProperty(), new NumberStringConverter());
+		view.getAreaLabel().textProperty().bind(model.areaProperty().asString());
+		view.getPerimetroLabel().textProperty().bind(model.perimetroProperty().asString());
+		
+		
+		view.getRectanguloShape().widthProperty().bind(model.baseProperty());
+		view.getRectanguloShape().heightProperty().bind(model.alturaProperty());
+
 	}
 
 	public RectanguloView getRoot() {
