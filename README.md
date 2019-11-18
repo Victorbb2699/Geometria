@@ -1,4 +1,4 @@
 # Geometria
 
-figuras geometricas
+Calculadora de areas para figuras geometricas
 
